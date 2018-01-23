@@ -1,11 +1,13 @@
 (function (ng) {
-	'use strict';
-     angular.module('mApp').controller('HomeCtrl', HomeCtrl);
+    'use strict';
+    ng.module('mApp').controller('HomeCtrl', HomeCtrl);
 
-     HomeCtrl.$inject = ['$scope'];
+    HomeCtrl.$inject = ['$scope']; //
 
-     function HomeCtrl ($scope) {
+    function HomeCtrl ($scope) {
+        //create anchor for base this
+        var vm = this;
 
-     }
+    };
 })(angular)
 
