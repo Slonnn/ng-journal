@@ -43,16 +43,14 @@
              */
             function setActiveClass() {
                 var path = $location.path();
-                console.log('1');
                 if (path) {
                     angular.forEach(element.find('li'), function (li) {
                         var anchor = li.querySelector('a');
-                        if (anchor.href.match('#' + path + '(?=\\?|$)')) {
+                        if (anchor.href.match(path + '(?=\\?|$)')) {
                             angular.element(li).addClass('current');
                         } else {
                             angular.element(li).removeClass('current');
                         }
-                        console.log('2');
                     });
                 }
             }

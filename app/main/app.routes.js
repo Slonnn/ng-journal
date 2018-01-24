@@ -1,7 +1,7 @@
 (function (ng) {
 	'use strict';
 	ng.module('mApp.routes',['ngRoute'])
-	.config(function($routeProvider) {
+	.config(function($routeProvider, $locationProvider) {
 		$routeProvider
 			.when('/', {
 				templateUrl: '/app/main/views/home.html',
@@ -22,5 +22,6 @@
 			.otherwise({
 				redirectTo: '/'
 			});
+        $locationProvider.html5Mode(true);
 	});
 })(angular)
