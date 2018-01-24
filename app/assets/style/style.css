@@ -827,7 +827,7 @@ footer ul.tag-list li a:hover {
 }
 .nav > li.current > a {
     background: none;
-    color: #ef5f60;
+    color: #ef5f60!important;
 }
 .navbar .dropdown-menu {
     padding: 0;

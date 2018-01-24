@@ -14,9 +14,8 @@
 
         // Return directive settings
         return {
-            restrict     : 'E',
+            restrict     : 'A',
             controllerAs : 'vm',    //дельнейшая работа через vm
-            templateUrl  : '/template/baseDirective.html',
             link         : _baseLink,
             controller   : _baseCtrl
 
@@ -39,10 +38,30 @@
          */
         function _baseLink(scope, element, attrs, ctrl) { //добавляем Ctrl в Link
 
+            /**
+             * проверяем на какой странице нацодимся и добавляем ему class="current"
+             */
+            function setActiveClass() {
+                var path = $location.path();
+                console.log('1');
+                if (path) {
+                    angular.forEach(element.find('li'), function (li) {
+                        var anchor = li.querySelector('a');
+                        if (anchor.href.match('#' + path + '(?=\\?|$)')) {
+                            angular.element(li).addClass('current');
+                        } else {
+                            angular.element(li).removeClass('current');
+                        }
+                        console.log('2');
+                    });
+                }
+            }
 
+            setActiveClass();
+
+            scope.$on('$locationChangeSuccess', setActiveClass);
 
         }
 
     }
 })(angular);
-
