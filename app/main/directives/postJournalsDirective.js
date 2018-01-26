@@ -14,24 +14,9 @@
 
         // Return directive settings
         return {
-            restrict     : 'EA',
+            restrict     : 'A',
             controllerAs : 'vm',    //дельнейшая работа через vm
-            template     : "<div class=\"post col-sm-12 col-md-6\" ng-repeat=\"journal in postJournals\">\n" +
-            "                   <div class=\"row\">\n" +
-            "                       <div class=\"col-sm-4\">\n" +
-            "                           <figure> <a ng-href=\"{{journal.href}}\">\n" +
-            "                               <div class=\"text-overlay\">\n" +
-            "                                   <div class=\"info\"><span>Read More</span></div>\n" +
-            "                               </div>\n" +
-            "                                   <img ng-src=\"{{journal.img}}\" alt=\"\" /></a></figure>\n" +
-            "                           </div>\n" +
-            "                               <div class=\"col-sm-8 post-content\">\n" +
-            "                                   <div class=\"meta\"><span class=\"date\">{{journal.date}}</span><span class=\"comments\"><a href=\"#\">8 <i class=\"icon-chat-1\"></i></a></span></div>\n" +
-            "                           <h3 class=\"post-title\"><a ng-href=\"{{journal.href}}\">{{journal.title}}</a></h3><p>{{journal.text}}</p>\n" +
-            "                       </div>\n" +
-            "                   </div>\n" +
-            "               </div>",
-            // tempLateUrl  : '/template/introDirective.html',
+            templateUrl  : '/app/main/template/postJournalsDirective.html',
             link         : _baseLink,
             controller   : _baseCtrl
 
@@ -95,7 +80,6 @@
              * @type {*|Array}
              */
             scope.postJournals = ctrl.postJournals;
-            console.log("hi", scope.postJournals)
         }
 
     }

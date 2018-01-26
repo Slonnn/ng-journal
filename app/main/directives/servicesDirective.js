@@ -16,20 +16,7 @@
         return {
             restrict     : 'A',
             controllerAs : 'vm',    //дельнейшая работа через vm
-            template     : "<div class=\"row text-center services-1\">\n" +
-            "                   <div class=\"col-sm-3\"  ng-repeat=\"services in Services\">\n" +
-            "                       <div class=\"col-wrapper\">\n" +
-            "                           <div class=\"icon-wrapper\">\n" +
-            "                               <div class=\"icon\"><img ng-src=\"{{services.img}}\" data-ng-src=\"{{services.img}}\" data-ret=\"app/assets/images/icons/icon-web@2x.png\" class=\"retina\" alt=\"\" /></div>\n" +
-            "                           </div>\n" +
-            "                           <div class=\"text-wrapper\">\n" +
-            "                               <h4>{{services.title}}</h4>\n" +
-            "                               <p>{{services.text}}</p>\n" +
-            "                           </div>\n" +
-            "                       </div>\n" +
-            "                   </div>\n" +
-            "               </div>",
-            // tempLateUrl  : '/template/introDirective.html',
+            templateUrl  : '/app/main/template/services.html',
             link         : _baseLink,
             controller   : _baseCtrl
 
@@ -86,6 +73,7 @@
              * @type {*|Array}
              */
             scope.Services = ctrl.Services;
+            console.log(scope.Services);
         }
 
     }

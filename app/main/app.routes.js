@@ -9,7 +9,8 @@
 			})
             .when('/journal', {
                 templateUrl: '/app/main/views/journal.html',
-                controller : 'JournalCtrl'
+                controller : 'JournalCtrl',
+                controllerAs : 'JournalCtrl'
             })
             .when('/portfolio', {
                 templateUrl: '/app/main/views/portfolio.html',
@@ -22,6 +23,6 @@
 			.otherwise({
 				redirectTo: '/'
 			});
-        $locationProvider.html5Mode(true);
+         $locationProvider.html5Mode(true);
 	});
 })(angular)

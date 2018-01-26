@@ -1,0 +1,13 @@
+<div class="row text-center services-1">
+    <div class="col-sm-3"  ng-repeat="services in Services">
+        <div class="col-wrapper">
+            <div class="icon-wrapper">
+                <div class="icon"><img ng-src="{{services.img}}" data-ng-src="{{services.img}}" data-ret="app/assets/images/icons/icon-web@2x.png" class="retina" alt=""></div>
+            </div>
+            <div class="text-wrapper">
+                <h4>{{services.title}}</h4>
+                <p>{{services.text}}</p>
+            </div>
+        </div>
+    </div>
+</div>

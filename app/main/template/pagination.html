@@ -1,0 +1,17 @@
+<ul>
+    <li><a href="#" class="btn"
+           ng-disabled="vm.firstPage()"
+           ng-click="vm.prevPage()">Prev</a>
+    </li>
+    <li ng-class="{'active':page==vm.page}"
+        ng-repeat="page in vm.pages">
+        <a href="#" class="btn"
+           ng-click="vm.setPage(page)">
+            <span>{{page}}</span>
+        </a>
+    </li>
+    <li><a href="#" class="btn"
+           ng-disabled="vm.lastPage()"
+           ng-click="vm.nextPage()">Next</a>
+    </li>
+</ul>
