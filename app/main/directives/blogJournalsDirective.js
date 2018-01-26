@@ -31,6 +31,13 @@
         function _baseCtrl() {
             var vm = this;
 
+            vm.page = 0;
+            vm.limit = 0;
+            vm.generate = function(page,limit) {
+                vm.page = page;
+                vm.limit = limit;
+            }
+
             vm.blogPosts = [
                 {
                     id: 1,
@@ -66,17 +73,97 @@
 
                 },
                 {
-                    id: 3,
+                    id: 5,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '#1  27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 6,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '11 Nov 2018',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 7,
                     href:'blog-post.html',
                     img: 'app/assets/images/art/b5.jpg',
                     date: '27 Dec 2013',
                     title: 'Ultricies Tortor Malesuada',
                     text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
                 },
+                {
+                    id: 8,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 9,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 10,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '#2 11 Dec 2016',
+                    title: 'Inceptos Porta Nibh',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 11,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Nulla vitae elit libero, a pharetra augue. Fusce dapibus, tellus ac cursus commodo.'
+                },
+                {
+                    id: 12,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 13,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 14,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 15,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '#3 27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                }
             ];
 
 
-        }
+        };
 
         /**Прописываем все манипуляции scope, element
          * Link method for base BaseDirective
@@ -88,6 +175,9 @@
              * @type {*|Array}
              */
             scope.blogPosts = ctrl.blogPosts;
+
+            ctrl.generate(attrs['page'],attrs['limit']);
+
 
         }
 
