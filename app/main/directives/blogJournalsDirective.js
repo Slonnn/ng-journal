@@ -2,9 +2,9 @@
     'use strict';
     ng.module('mApp').directive('blogJournalsDirective', blogJournalsDirective);
 
-    blogJournalsDirective.$inject = []; //
+    blogJournalsDirective.$inject = ['$rootScope']; //
 
-    function blogJournalsDirective () {
+    function blogJournalsDirective ($rootScope) {
 
         // Inject line for link method
         _baseLink.$inject = ['$scope','$element', 'attrs', 'ctrl'];
@@ -16,10 +16,10 @@
         return {
             restrict     : 'EA',
             controllerAs : 'vm',    //дельнейшая работа через vm
+            scope        : {},
             templateUrl  : 'app/main/template/blogJournal.html',
             link         : _baseLink,
             controller   : _baseCtrl
-
         }
 
 
@@ -32,10 +32,9 @@
             var vm = this;
 
             vm.page = 0;
-            vm.limit = 0;
-            vm.generate = function(page,limit) {
-                vm.page = page;
-                vm.limit = limit;
+            vm.limit = 5;
+            vm.getOffSet = function () {
+                return (vm.page-1)*vm.limit;
             }
 
             vm.blogPosts = [
@@ -159,11 +158,19 @@
                     date: '#3 27 Dec 2013',
                     title: 'Ultricies Tortor Malesuada',
                     text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
+                },
+                {
+                    id: 16,
+                    href:'blog-post.html',
+                    img: 'app/assets/images/art/b5.jpg',
+                    date: '#3 27 Dec 2013',
+                    title: 'Ultricies Tortor Malesuada',
+                    text: 'Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Curabitur blandit tempus porttitor. Cras justo odio, dapibus ac facilisis in, egestas eget quam.'
                 }
             ];
 
 
-        };
+        }
 
         /**Прописываем все манипуляции scope, element
          * Link method for base BaseDirective
@@ -171,12 +178,13 @@
          */
         function _baseLink(scope, element, attrs, ctrl) { //добавляем Ctrl в Link
             /**
-             * transfer of objects through ng-repeat
-             * @type {*|Array}
+             * transfer of objects on filters blogJournal
              */
-            scope.blogPosts = ctrl.blogPosts;
-
-            ctrl.generate(attrs['page'],attrs['limit']);
+            ctrl.page = attrs['page'];
+            ctrl.limit = attrs['limit'];
+            $rootScope.$on('change-blog-page', function(event, data){
+                ctrl.page = data;
+            })
 
 
         }

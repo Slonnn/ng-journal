@@ -1,4 +1,5 @@
-<div class="post row" ng-repeat="post in blogPosts| paginationFilter:(vm.page-1)*vm.limit | limitTo:vm.limit">
+
+<div class="post row" ng-repeat="post in vm.blogPosts | paginationFilter:vm.getOffSet() | limitTo:vm.limit">
     <div class="col-sm-4">
         <figure><a ng-href="{{post.href}}">
             <div class="text-overlay">

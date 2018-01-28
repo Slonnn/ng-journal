@@ -5,18 +5,12 @@
     paginationFilter.$inject = [];
 
     function paginationFilter () {
-
         return function (input, start) {
             start = +start;
-            console.log('start', start);
-
-            if(input == 1){
-                return  input.slice(0,start);
-            }
-            else{
-                return input.slice(start);
-            };
-            console.log('input', input);
+            return input.slice(start);
         }
     }
 })(angular);
+
+
+
